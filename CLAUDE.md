@@ -76,7 +76,7 @@ Shadow “A”: 8-layer soft drop shadow (floating stat cards). Borders: 1px `ne
   CourseCard visual language.
 - Signup has only Full Name, Email, Password (no confirm-password field — not in the design).
 - States missing from the design (hover/focus/active/disabled/error/loading/empty/dropdowns/mobile menu)
-  are derived from the design language: darker lime hover, blue focus ring, antd error styles themed
+  are derived from the design language: lime-300 hover / lime-500 pressed on lime buttons, blue focus ring, antd error styles themed
   with our tokens.
 
 ## Stack

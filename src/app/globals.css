@@ -1,3 +1,6 @@
+/* antd styles live in their own layer so Tailwind utilities win without !important. */
+@layer theme, base, antd, components, utilities;
+
 @import "tailwindcss";
 
 /* Design tokens from the Figma Style Guide (page 63:645). */
