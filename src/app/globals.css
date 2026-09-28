@@ -79,6 +79,18 @@
   --text-heading-compact--letter-spacing: -0.01em;
   --text-heading-compact--font-weight: 600;
 
+  /* Card-only sizes used in the frames but not listed in the Style Guide. */
+  --text-stat: 3rem;
+  --text-stat--line-height: 1.2;
+  --text-stat--letter-spacing: -0.01em;
+  --text-stat--font-weight: 600;
+  --text-heading-2xs: 1.5rem;
+  --text-heading-2xs--line-height: 2rem;
+  --text-heading-2xs--letter-spacing: -0.01em;
+  --text-heading-2xs--font-weight: 600;
+  --text-caption: 0.625rem;
+  --text-caption--line-height: 1.5;
+
   --text-display-s: 2.75rem;
   --text-display-s--line-height: 3.25rem;
   --text-display-s--letter-spacing: -0.01em;
