@@ -126,6 +126,9 @@
   --radius-media: 0.75rem;
   --radius-card: 1.5rem;
 
+  /* Interaction-only elevation for cards (not a Figma style). */
+  --shadow-card: 0 24px 48px -24px rgb(0 0 0 / 0.18);
+
   --shadow-float:
     0.52px 0.74px 3.04px rgb(0 0 0 / 0.04), 2.23px 3.19px 5.72px rgb(0 0 0 / 0.06),
     5.38px 7.69px 9.57px rgb(0 0 0 / 0.07), 10.21px 14.58px 16.09px rgb(0 0 0 / 0.08),
