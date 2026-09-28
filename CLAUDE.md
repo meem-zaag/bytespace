@@ -8,17 +8,17 @@ Static education website built pixel-perfect from Figma. Read this fully before 
   (“ByteSpace-New-Check-website (Copy)”). Original key `26TBgRjmpuxudcErJsHUfy` is not accessible.
 - Single page `Design` (0:1). All frames are **desktop 1440px only** — no tablet/mobile frames.
 
-| Page | Node | Route |
-| --- | --- | --- |
-| Landing (Home) | `1:1067` | `/` |
-| Signup (Register) | `47:351` | `/signup` |
-| Signin (Login) | `49:195` | `/signin` |
-| Courses list (Search Page) | `55:117` | `/courses` |
-| Course Details — About tab | `55:4066` | `/courses/[slug]` (tab `about`) |
-| Course Details — Lessons tab | `60:102` | `/courses/[slug]` (tab `lessons`) |
-| Course Details — Reviews tab | `60:681` | `/courses/[slug]` (tab `reviews`) |
-| Creator Profile | `60:1878` | `/creators/[slug]` |
-| 404 | `63:252` | `not-found.js` |
+| Page                         | Node      | Route                             |
+| ---------------------------- | --------- | --------------------------------- |
+| Landing (Home)               | `1:1067`  | `/`                               |
+| Signup (Register)            | `47:351`  | `/signup`                         |
+| Signin (Login)               | `49:195`  | `/signin`                         |
+| Courses list (Search Page)   | `55:117`  | `/courses`                        |
+| Course Details — About tab   | `55:4066` | `/courses/[slug]` (tab `about`)   |
+| Course Details — Lessons tab | `60:102`  | `/courses/[slug]` (tab `lessons`) |
+| Course Details — Reviews tab | `60:681`  | `/courses/[slug]` (tab `reviews`) |
+| Creator Profile              | `60:1878` | `/creators/[slug]`                |
+| 404                          | `63:252`  | `not-found.js`                    |
 
 | Style Guide page | `63:645` (Colors `73:753`, Layout Grid `73:1014`, Typography `73:1039`) | — |
 
@@ -33,6 +33,7 @@ Static education website built pixel-perfect from Figma. Read this fully before 
 ## Design tokens (from the Style Guide page — canonical when frames disagree)
 
 Colors (Tailwind names → hex):
+
 - `neutral` (Figma “Shuttle Gray”): 50 `#F5F5F6`, 100 `#E5E6E8`, 200 `#CED0D3`, 300 `#ABAEB5`,
   400 `#82868E`, 500 `#666973`, 600 `#585A62`, 700 `#4B4C53`, 800 `#424348`, 900 `#3A3B3F`, 950 `#242528`
 - `primary` (Figma “Persian Blue”): 50 `#E7F6FF`, 100 `#D3EEFF`, 200 `#B0DDFF`, 300 `#81C5FF`,
@@ -45,6 +46,7 @@ Colors (Tailwind names → hex):
   700 `#4F4F4F`; black, white.
 
 Typography (all headings letter-spacing −1% = `-0.01em`; body/labels 0):
+
 - Poppins SemiBold: Heading L 72/120%, Heading M 44/120%, Heading S 36/120%, Heading XS 20/120%
 - Poppins Medium (used in frames, not in guide): Display S 44/52px, Display XS 36/44px
 - Satoshi Regular: Body L 18, Body M 16, Body S 14, Body XS 12 — all 160%
