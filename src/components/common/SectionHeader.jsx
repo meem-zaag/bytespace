@@ -7,7 +7,7 @@ const ALIGN = {
 };
 
 const TONE = {
-  muted: "text-neutral-400",
+  muted: "text-neutral-500",
   default: "text-neutral-700",
 };
 
