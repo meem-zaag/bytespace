@@ -59,7 +59,6 @@ const theme = {
     Input: {
       borderRadiusLG: 12,
       inputFontSizeLG: 18,
-      paddingBlockLG: 11,
       paddingInlineLG: 23,
       activeBorderColor: palette.primary800,
       hoverBorderColor: palette.neutral200,
