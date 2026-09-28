@@ -66,6 +66,22 @@ export const landing = {
       { id: "photography", label: "Photography", icon: "photography", query: "photography" },
     ],
   },
+  growth: {
+    title: "Your Path to Professional Growth Starts Here!",
+    description:
+      "Explore our curated selection of courses tailored to enhance your capabilities and accelerate your career journey. Whether you are looking to sharpen specific skills, gain industry expertise, or embark on a new career path entirely, we have the resources you need.",
+    stats: [
+      { value: "12K", label: "Students" },
+      { value: "70+", label: "Courses" },
+      { value: "16", label: "Creators" },
+    ],
+    showcaseCourseSlug: "learn-figma-from-basic",
+    image: {
+      src: "/images/landing/hero-student.webp",
+      alt: "Student with headphones studying on a laptop",
+    },
+    progressCard: { label: "Learning Progress", value: 55 },
+  },
   creatorCta: {
     title: "Unlock Your Potential as a Creator with ByteSpace",
     description:
