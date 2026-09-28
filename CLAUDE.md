@@ -103,7 +103,8 @@ src/
     courses/page.js  courses/[slug]/page.js
     creators/page.js  creators/[slug]/page.js
   components/
-    ui/        # primitives: AppButton, Container, Heading, Chip, Badge, Icon*, Avatar, AvatarGroup,
+    icons/     # one SVG React component per icon (Material Symbols + brand marks), currentColor
+    ui/        # primitives: Logo, AppButton, Container, Heading, Chip, Badge, Avatar, AvatarGroup,
                # Rating, ProgressBar, FormInput, PasswordInput, SelectField, SearchInput, Pagination, GridBackdrop
     common/    # composed & reused: CourseCard, CourseGrid, CategoryChips, CourseToolbar, SectionHeader,
                # FloatingStatCard(s), TestimonialCard, ReviewCard, LessonItem, CreatorSummary, CheckList
@@ -124,7 +125,7 @@ src/
   hooks/
   providers/   # AntdProvider, LenisProvider, Providers (composition)
 public/
-  images/<page-or-section>/...   icons/...   fonts/ (self-hosted Satoshi, Clash Display)
+  images/{courses,people,<page-or-section>}/...   (fonts are fetched at build, not committed)
 ```
 
 ## Architecture rules
