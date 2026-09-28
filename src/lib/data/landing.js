@@ -82,6 +82,24 @@ export const landing = {
     },
     progressCard: { label: "Learning Progress", value: 55 },
   },
+  createManage: {
+    title: "Create & Manage Courses Easily.",
+    brand: "ByteSpace",
+    description:
+      "supports individuals or entities in the creation, publication, and administration of educational courses.",
+    benefits: [
+      "Share Your Expertise",
+      "Monetize Your Passion",
+      "Flexibility and Autonomy",
+      "Build a Community",
+    ],
+    image: {
+      src: "/images/landing/creator-student.webp",
+      alt: "Smiling creator with headphones holding a tablet",
+    },
+    revenue: { title: "Total Revenue", period: "July 1-28", amount: "$120.29", progress: 56 },
+    yearToDate: { title: "Year to Date", period: "2023", amount: "$1,200.38", change: "+12%" },
+  },
   creatorCta: {
     title: "Unlock Your Potential as a Creator with ByteSpace",
     description:
