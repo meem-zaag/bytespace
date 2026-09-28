@@ -153,6 +153,11 @@ public/
 - Access ONLY through `src/lib/api/*`: `getAllCourses`, `getCourseBySlug`, `getCoursesByCreator`,
   `getAllCreators`, `getCreatorBySlug`, `getLessonsByCourse`, `getReviewsByCourse`,
   `getReviewSummary`, `getCategories`, etc. Helpers are async so an API can replace them later.
+- Derived, never stored twice: course `rating`/`reviewCount` come from `ratingBreakdown`; a creator's
+  `courseCount`/`studentCount` and course list come from courses that reference the creator.
+- Model: `creators` ← `courses` (`creatorId`, `creatorSlug`, `categoryId`, `learnerIds`) → `lessons`
+  (modules with lessons, by `courseId`) and `reviews` (by `courseId` + `learnerId`); `learners` are
+  review authors and card avatar stacks. Images live in `public/images/{courses,people}`.
 - Use Figma copy verbatim where it exists; generate consistent dummy data for extra items.
 - Forms have no backend: submit handlers live in `src/lib/services/auth.js`, simulate latency, return a
   success result; UI shows antd `message`. Never store credentials.
