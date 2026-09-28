@@ -19,10 +19,15 @@ export default function CoursesHero({ content }) {
   const searchParams = useSearchParams();
   const initialQuery = searchParams.get("q") ?? "";
   const setFilters = useCourseFiltersStore((state) => state.setFilters);
+  const resetCount = useCourseFiltersStore((state) => state.resetCount);
 
   useEffect(() => {
     setFilters({ query: initialQuery });
   }, [initialQuery, setFilters]);
+
+  useEffect(() => {
+    if (resetCount > 0) window.history.replaceState(null, "", window.location.pathname);
+  }, [resetCount]);
 
   function handleSearch(query) {
     setFilters({ query });
@@ -40,10 +45,10 @@ export default function CoursesHero({ content }) {
           {content.title}
         </Heading>
         <ScopedSearch
-          key={initialQuery}
+          key={`${initialQuery}-${resetCount}`}
           search={content.search}
           currentScope="courses"
-          defaultQuery={initialQuery}
+          defaultQuery={resetCount > 0 ? "" : initialQuery}
           onSearch={handleSearch}
           className="w-full max-w-[624px]"
         />
