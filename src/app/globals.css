@@ -157,3 +157,15 @@
     @apply outline-2 outline-offset-2 outline-primary-800;
   }
 }
+
+/* Blue brand panel with the 120px white grid (12% opacity, 2px lines) from the hero frames.
+   A line always passes through the horizontal center (and x = 0, 120… at the 1440px frame):
+   percentage positions resolve against (width - tile), so 50% + 60px lands a tile edge on center. */
+@utility bg-brand-grid {
+  background-color: var(--color-primary-800);
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.12) 2px, transparent 2px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.12) 2px, transparent 2px);
+  background-size: 120px 120px;
+  background-position: calc(50% + 60px) -2px;
+}
