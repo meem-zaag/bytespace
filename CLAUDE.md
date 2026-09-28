@@ -77,6 +77,8 @@ Figma source renders (image fills) exactly like Figma composites them: the grey 
 - Footer column titles (“Browse”, “Platform”) are transparent in Figma: render them visually hidden
   (screen-reader only).
 - Ignore hidden/off-canvas layers.
+- Accessibility over exact grey: muted text uses `neutral-500` (`#666973`, 5.6:1) instead of Figma's
+  `#82868E`/`#888888` (3.65:1 fails WCAG AA); links inside sentences are underlined.
 
 ## Product decisions
 

@@ -13,7 +13,7 @@ export default function TopicStatCard({ title, stats, className }) {
     <StatCard className={className}>
       <div>
         <p className="text-label-m">{title}</p>
-        <p className="flex items-center gap-2 text-body-xs text-neutral-400">
+        <p className="flex items-center gap-2 text-body-xs text-neutral-500">
           {stats.map((stat, index) => (
             <span key={stat} className="flex items-center gap-2">
               {index > 0 && (

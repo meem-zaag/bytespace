@@ -24,7 +24,7 @@ export default function SocialSignIn({
 }) {
   return (
     <div className="flex flex-col items-center gap-10">
-      <div className="flex w-full items-center gap-[11px] text-body-l text-neutral-400">
+      <div className="flex w-full items-center gap-[11px] text-body-l text-neutral-500">
         <span className="h-px flex-1 bg-ink-200" />
         {dividerLabel}
         <span className="h-px flex-1 bg-ink-200" />

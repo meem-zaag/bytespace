@@ -35,7 +35,7 @@ export default function HappyStudentsCard({
         <p
           className={cn(
             "flex items-center text-caption",
-            onLime ? "text-neutral-800" : "text-neutral-400",
+            onLime ? "text-neutral-800" : "text-neutral-500",
           )}
         >
           <span>

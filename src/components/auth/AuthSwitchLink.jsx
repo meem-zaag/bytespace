@@ -14,11 +14,14 @@ export default function AuthSwitchLink({ prompt, link, tone = "default" }) {
     <p
       className={cn(
         "text-center text-body-m",
-        tone === "muted" ? "text-neutral-400" : "text-neutral-700",
+        tone === "muted" ? "text-neutral-500" : "text-neutral-700",
       )}
     >
       {prompt}{" "}
-      <Link href={link.href} className="rounded-sm text-primary-800 hover:underline">
+      <Link
+        href={link.href}
+        className="rounded-sm text-primary-800 underline underline-offset-2 hover:no-underline"
+      >
         {link.label}
       </Link>
     </p>
