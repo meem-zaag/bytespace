@@ -57,6 +57,14 @@ Layout grid: 12 columns, 120px margin, 40px gutter, 1200px content at 1440. Head
 Radii: 24 cards/buttons/chips, 12 card media, full for search/email inputs.
 Shadow “A”: 8-layer soft drop shadow (floating stat cards). Borders: 1px `neutral-200`.
 
+## Decorative 3D shapes
+
+`public/images/decor/{spring,coil,torus,cylinder,pyramid,cone}-{lime,white}.webp` are rebuilt from the
+Figma source renders (image fills) exactly like Figma composites them: the grey render with a solid
+`#D4FB20` / `#F5F5F6` layer in HARD_LIGHT blend, masked by the render's alpha. Place them with
+`components/ui/DecorShape` at the Figma coordinates (size via `--decor-size`, so responsive
+`size-*` classes can override it without `!important`).
+
 ## Design corrections (approved by the user — apply instead of copying the frame)
 
 - Course tab label: “Lessons” everywhere. Lesson modules numbered sequentially (Figma skips Module 3).
