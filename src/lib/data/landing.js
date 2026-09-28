@@ -53,6 +53,19 @@ export const landing = {
       actionLabel: "Browse all courses",
     },
   },
+  learningPaths: {
+    title: "Explore Diverse Learning Paths at Bytespace",
+    description:
+      "At Bytespace, we believe in empowering individuals through knowledge. Our diverse range of courses spans various fields, ensuring there's something for everyone. Unleash your potential and explore our carefully curated categories.",
+    paths: [
+      { id: "design", label: "Design", icon: "design", query: "design" },
+      { id: "development", label: "Development", icon: "development", query: "development" },
+      { id: "it-software", label: "IT & Software", icon: "computer", query: "software" },
+      { id: "business", label: "Business", icon: "business", query: "business" },
+      { id: "marketing", label: "Marketing", icon: "marketing", query: "marketing" },
+      { id: "photography", label: "Photography", icon: "photography", query: "photography" },
+    ],
+  },
   creatorCta: {
     title: "Unlock Your Potential as a Creator with ByteSpace",
     description:

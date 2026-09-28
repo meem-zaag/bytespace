@@ -41,7 +41,7 @@ export default function CourseCard({
         className,
       )}
     >
-      <div className="relative aspect-[341/195] overflow-hidden rounded-media bg-neutral-900">
+      <div className="relative aspect-[343/195] overflow-hidden rounded-media bg-neutral-900">
         <Image
           src={course.thumbnail.src}
           alt={course.thumbnail.alt}
