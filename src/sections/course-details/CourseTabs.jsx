@@ -1,7 +1,6 @@
 "use client";
 
 import { Tabs } from "antd";
-import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 const TAB_CLASSES = {
@@ -17,11 +16,10 @@ const TAB_CLASSES = {
  * @param {object} props
  * @param {{ key: string, label: string }[]} props.tabs
  * @param {Record<string, import("react").ReactNode>} props.panels content per tab key
+ * @param {string | null} [props.initialTab] requested tab (from `?tab=`), falls back to the first
  */
-export default function CourseTabs({ tabs, panels }) {
-  const searchParams = useSearchParams();
-  const requested = searchParams.get("tab");
-  const initial = tabs.some((tab) => tab.key === requested) ? requested : tabs[0].key;
+export default function CourseTabs({ tabs, panels, initialTab = null }) {
+  const initial = tabs.some((tab) => tab.key === initialTab) ? initialTab : tabs[0].key;
   const [active, setActive] = useState(initial);
 
   function handleChange(key) {

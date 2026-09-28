@@ -37,7 +37,7 @@ export default function DecorShape({ shape, tone, size, float = false, delay, cl
       style={{ "--decor-size": `${size}px`, ...style }}
     >
       {float ? (
-        <Float distance={12} duration={6} delay={delay} className="size-full">
+        <Float delay={delay} className="size-full">
           {image}
         </Float>
       ) : (

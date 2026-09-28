@@ -13,6 +13,7 @@ import CourseLessons from "@/sections/course-details/CourseLessons";
 import CourseReviews from "@/sections/course-details/CourseReviews";
 import CourseSidebar from "@/sections/course-details/CourseSidebar";
 import CourseTabs from "@/sections/course-details/CourseTabs";
+import CourseTabsFromUrl from "@/sections/course-details/CourseTabsFromUrl";
 
 export const dynamicParams = false;
 
@@ -47,26 +48,25 @@ export default async function CourseDetailsPage({ params }) {
     getReviewSummary(course.id),
   ]);
 
+  const panels = {
+    about: <CourseAbout course={course} content={content.about} />,
+    lessons: <CourseLessons modules={modules} content={content.lessons} />,
+    reviews: (
+      <CourseReviews
+        course={course}
+        summary={summary}
+        reviews={reviews}
+        content={content.reviews}
+      />
+    ),
+  };
+
   return (
     <main id="main" className="flex-1">
       <CourseHero course={course} />
       <Container className="grid gap-10 pt-10 pb-20 xl:grid-cols-[723px_412px] xl:justify-between xl:pt-[63px] xl:pb-[72px]">
-        <Suspense>
-          <CourseTabs
-            tabs={content.tabs}
-            panels={{
-              about: <CourseAbout course={course} content={content.about} />,
-              lessons: <CourseLessons modules={modules} content={content.lessons} />,
-              reviews: (
-                <CourseReviews
-                  course={course}
-                  summary={summary}
-                  reviews={reviews}
-                  content={content.reviews}
-                />
-              ),
-            }}
-          />
+        <Suspense fallback={<CourseTabs tabs={content.tabs} panels={panels} />}>
+          <CourseTabsFromUrl tabs={content.tabs} panels={panels} />
         </Suspense>
         <CourseSidebar
           course={course}

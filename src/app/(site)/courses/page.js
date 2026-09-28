@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { getCatalogContent } from "@/lib/api/catalog";
 import { getAllCourses, getCategories, getCourseLevels } from "@/lib/api/courses";
 import CoursesHero from "@/sections/courses/CoursesHero";
+import CoursesHeroFromUrl from "@/sections/courses/CoursesHeroFromUrl";
 import CoursesListing from "@/sections/courses/CoursesListing";
 
 export const metadata = buildMetadata({
@@ -23,8 +24,8 @@ export default async function CoursesPage() {
 
   return (
     <main id="main" className="flex-1">
-      <Suspense>
-        <CoursesHero content={content.hero} />
+      <Suspense fallback={<CoursesHero content={content.hero} />}>
+        <CoursesHeroFromUrl content={content.hero} />
       </Suspense>
       <CoursesListing
         courses={courses}

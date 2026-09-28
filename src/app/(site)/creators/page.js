@@ -5,6 +5,7 @@ import { getAllCreators } from "@/lib/api/creators";
 import { getCreatorsDirectoryContent } from "@/lib/api/creatorsDirectory";
 import CreatorsGrid from "@/sections/creators/CreatorsGrid";
 import CreatorsHero from "@/sections/creators/CreatorsHero";
+import CreatorsHeroFromUrl from "@/sections/creators/CreatorsHeroFromUrl";
 
 export const metadata = buildMetadata({
   title: "Creators",
@@ -17,8 +18,8 @@ export default async function CreatorsPage() {
 
   return (
     <main id="main" className="flex-1">
-      <Suspense>
-        <CreatorsHero content={content.hero} />
+      <Suspense fallback={<CreatorsHero content={content.hero} />}>
+        <CreatorsHeroFromUrl content={content.hero} />
       </Suspense>
       <CreatorsGrid creators={creators} content={content} />
     </main>

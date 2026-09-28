@@ -1,6 +1,5 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import ScopedSearch from "@/components/common/ScopedSearch";
 import Container from "@/components/ui/Container";
@@ -13,10 +12,9 @@ import { useCreatorSearchStore } from "@/store/useCreatorSearchStore";
  *
  * @param {object} props
  * @param {typeof import("@/lib/data/creatorsDirectory").creatorsDirectory.hero} props.content
+ * @param {string} [props.initialQuery=""] from `?q=`
  */
-export default function CreatorsHero({ content }) {
-  const searchParams = useSearchParams();
-  const initialQuery = searchParams.get("q") ?? "";
+export default function CreatorsHero({ content, initialQuery = "" }) {
   const setQuery = useCreatorSearchStore((state) => state.setQuery);
   const resetCount = useCreatorSearchStore((state) => state.resetCount);
 

@@ -8,7 +8,8 @@ const TONES = {
 
 /**
  * Shell of the small floating cards in the hero and feature sections (Figma: 16px radius,
- * 16px padding, 8px gap, 20px background blur).
+ * 16px padding, 8px gap). The Figma background blur is omitted: the cards are opaque, so it has no
+ * visible effect but would make every float frame re-blur the page behind it.
  *
  * @param {object} props
  * @param {"white" | "blue" | "lime"} [props.tone="white"]
@@ -18,13 +19,7 @@ const TONES = {
  */
 export default function StatCard({ tone = "white", as: Component = "div", className, children }) {
   return (
-    <Component
-      className={cn(
-        "flex flex-col gap-2 rounded-2xl p-4 backdrop-blur-[10px]",
-        TONES[tone],
-        className,
-      )}
-    >
+    <Component className={cn("flex flex-col gap-2 rounded-2xl p-4", TONES[tone], className)}>
       {children}
     </Component>
   );

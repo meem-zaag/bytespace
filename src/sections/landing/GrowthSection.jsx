@@ -47,10 +47,10 @@ export default function GrowthSection({ content, course }) {
               <Image
                 src={content.image.src}
                 alt={content.image.alt}
-                width={577}
-                height={540}
-                sizes="(min-width: 1024px) 577px, 90vw"
-                className="drop-shadow-float"
+                width={729}
+                height={715}
+                sizes="(min-width: 1024px) 729px, 90vw"
+                className="-mt-[23.5px] -ml-[23.5px] w-[729px] max-w-none"
               />
             </FadeIn>
             <Float delay={0.6} className="absolute top-[213px] left-[345px]">

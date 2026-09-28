@@ -1,4 +1,3 @@
-import FadeIn from "@/components/motion/FadeIn";
 import AppButton from "@/components/ui/AppButton";
 import Container from "@/components/ui/Container";
 import GridBackdrop from "@/components/ui/GridBackdrop";
@@ -23,16 +22,13 @@ export default function NotFoundHero({ content }) {
         >
           {content.code}
         </p>
-        <FadeIn
-          immediate
-          className="relative -mt-[0.35em] flex max-w-[935px] flex-col items-center gap-8 text-[clamp(9rem,33vw,30rem)] lg:-mt-[128px]"
-        >
+        <div className="relative -mt-[0.35em] flex max-w-[935px] flex-col items-center gap-8 text-[clamp(9rem,33vw,30rem)] lg:-mt-[128px]">
           <Heading as="h1" id="not-found-title" size="l" className="text-white">
             {content.title}
           </Heading>
           <p className="text-body-l text-neutral-50">{content.description}</p>
           <AppButton href={content.cta.href}>{content.cta.label}</AppButton>
-        </FadeIn>
+        </div>
       </Container>
     </GridBackdrop>
   );

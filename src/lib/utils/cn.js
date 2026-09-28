@@ -29,7 +29,7 @@ const twMerge = extendTailwindMerge({
     theme: {
       text: TYPE_SCALE,
       radius: ["card", "media"],
-      shadow: ["float", "card"],
+      shadow: ["card"],
     },
   },
 });

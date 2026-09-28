@@ -33,10 +33,10 @@ export default function CreateManageSection({ content, happyStudents, people }) 
               <Image
                 src={content.image.src}
                 alt={content.image.alt}
-                width={435}
-                height={596}
-                sizes="(min-width: 1024px) 435px, 70vw"
-                className="drop-shadow-float"
+                width={588}
+                height={772}
+                sizes="(min-width: 1024px) 588px, 80vw"
+                className="-mt-[24.6px] -ml-[24.6px] w-[588px] max-w-none"
               />
             </FadeIn>
             <DecorShape
