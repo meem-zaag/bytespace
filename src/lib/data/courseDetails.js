@@ -2,6 +2,11 @@ import { ROUTES } from "@/lib/constants/routes";
 
 /** Shared copy of the course details page (every course uses it). */
 export const courseDetails = {
+  tabs: [
+    { key: "about", label: "About" },
+    { key: "lessons", label: "Lessons" },
+    { key: "reviews", label: "Reviews" },
+  ],
   sidebar: {
     previewCount: 3,
     moreVideosLabel: "more videos",
