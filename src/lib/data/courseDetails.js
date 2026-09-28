@@ -25,6 +25,18 @@ export const courseDetails = {
       "Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.",
     progress: { label: "Learning Progress", value: 55 },
   },
+  reviews: {
+    title: "What Learners Are Saying",
+    intro:
+      "Discover what our learners have to say about their experience with '{course}.' Read reviews and ratings from individuals who have embarked on the transformative journey of mastering the skills this course teaches.",
+    ratingsLabel: "Ratings",
+    listTitle: "Individual Reviews:",
+    allLabel: "All rating",
+    empty: {
+      title: "No reviews with this rating yet",
+      description: "Pick another rating to read what learners are saying.",
+    },
+  },
   sidebar: {
     previewCount: 3,
     moreVideosLabel: "more videos",
