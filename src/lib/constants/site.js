@@ -6,5 +6,5 @@ export const SITE = {
   description:
     "Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.",
   locale: "en_US",
-  foundedYear: 2023,
+  keywords: ["online courses", "learn design", "creators", "e-learning", "ByteSpace"],
 };
