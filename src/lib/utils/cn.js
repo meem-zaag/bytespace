@@ -7,6 +7,7 @@ const TYPE_SCALE = [
   "heading-m",
   "heading-s",
   "heading-xs",
+  "heading-compact",
   "display-s",
   "display-xs",
   "body-l",
