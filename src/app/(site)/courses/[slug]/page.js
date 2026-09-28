@@ -4,6 +4,7 @@ import { getCourseDetailsContent } from "@/lib/api/courseDetails";
 import { getCourseBySlug, getCourseIncludes, getCourseSlugs } from "@/lib/api/courses";
 import { getLessonsByCourse } from "@/lib/api/lessons";
 import Container from "@/components/ui/Container";
+import CourseAbout from "@/sections/course-details/CourseAbout";
 import CourseHero from "@/sections/course-details/CourseHero";
 import CourseSidebar from "@/sections/course-details/CourseSidebar";
 import CourseTabs from "@/sections/course-details/CourseTabs";
@@ -38,7 +39,10 @@ export default async function CourseDetailsPage({ params }) {
       <CourseHero course={course} />
       <Container className="grid gap-10 pt-10 pb-20 xl:grid-cols-[723px_412px] xl:justify-between xl:pt-[63px] xl:pb-[72px]">
         <Suspense>
-          <CourseTabs tabs={content.tabs} panels={{}} />
+          <CourseTabs
+            tabs={content.tabs}
+            panels={{ about: <CourseAbout course={course} content={content.about} /> }}
+          />
         </Suspense>
         <CourseSidebar
           course={course}

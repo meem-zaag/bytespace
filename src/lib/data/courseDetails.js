@@ -7,6 +7,11 @@ export const courseDetails = {
     { key: "lessons", label: "Lessons" },
     { key: "reviews", label: "Reviews" },
   ],
+  about: {
+    descriptionTitle: "Description",
+    galleryTitle: "Sneak Peek",
+    keyPointsTitle: "Key Points",
+  },
   sidebar: {
     previewCount: 3,
     moreVideosLabel: "more videos",
