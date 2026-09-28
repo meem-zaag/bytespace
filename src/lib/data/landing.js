@@ -40,6 +40,19 @@ export const landing = {
     { id: "partner-4", name: "Logoipsum", mark: "petals" },
     { id: "partner-5", name: "Logoipsum", mark: "rings" },
   ],
+  featuredCourses: {
+    title: "Discover Your Passion, Build Your Skills",
+    description:
+      "At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life.",
+    featuredLabel: "Featured",
+    moreLink: { label: "+ More", href: ROUTES.courses },
+    limit: 6,
+    empty: {
+      title: "No courses in this category yet",
+      description: "New courses are added every week. Browse the full catalog in the meantime.",
+      actionLabel: "Browse all courses",
+    },
+  },
   creatorCta: {
     title: "Unlock Your Potential as a Creator with ByteSpace",
     description:
