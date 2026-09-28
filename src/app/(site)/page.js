@@ -1,6 +1,8 @@
 import { getAllCourses, getCategories, getCourseBySlug } from "@/lib/api/courses";
 import { getLandingContent } from "@/lib/api/landing";
 import { getLearnersByIds } from "@/lib/api/learners";
+import CtaBanner from "@/sections/common/CtaBanner";
+import CreateManageSection from "@/sections/landing/CreateManageSection";
 import FeaturedCourses from "@/sections/landing/FeaturedCourses";
 import GrowthSection from "@/sections/landing/GrowthSection";
 import LandingHero from "@/sections/landing/LandingHero";
@@ -29,7 +31,13 @@ export default async function HomePage() {
       <LearningPaths content={content.learningPaths} />
       <ShowcaseBackdrop>
         <GrowthSection content={content.growth} course={showcaseCourse} />
+        <CreateManageSection
+          content={content.createManage}
+          happyStudents={content.hero.happyStudents}
+          people={happyStudents}
+        />
       </ShowcaseBackdrop>
+      <CtaBanner {...content.creatorCta} />
     </main>
   );
 }
