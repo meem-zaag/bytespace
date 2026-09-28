@@ -3,6 +3,7 @@ import { getLandingContent } from "@/lib/api/landing";
 import { getLearnersByIds } from "@/lib/api/learners";
 import FeaturedCourses from "@/sections/landing/FeaturedCourses";
 import LandingHero from "@/sections/landing/LandingHero";
+import LearningPaths from "@/sections/landing/LearningPaths";
 import PartnerLogos from "@/sections/landing/PartnerLogos";
 
 export default async function HomePage() {
@@ -22,6 +23,7 @@ export default async function HomePage() {
         courses={courses}
         categories={categories}
       />
+      <LearningPaths content={content.learningPaths} />
     </main>
   );
 }
