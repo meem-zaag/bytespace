@@ -98,10 +98,10 @@ Shadow “A”: 8-layer soft drop shadow (floating stat cards). Borders: 1px `ne
 ```
 src/
   app/                 # routes only: compose sections, fetch via lib/api
-    layout.js  page.js  not-found.js  globals.css  sitemap.js  robots.js
-    (auth)/signup/page.js  (auth)/signin/page.js  (auth)/layout.js
-    courses/page.js  courses/[slug]/page.js
-    creators/page.js  creators/[slug]/page.js
+    layout.js  not-found.js  globals.css  sitemap.js  robots.js   # root: html/body/providers
+    (site)/layout.js     # Header (+ Footer) chrome, header overlays the blue hero
+    (site)/page.js  (site)/courses/...  (site)/creators/...
+    (auth)/layout.js  (auth)/signup/page.js  (auth)/signin/page.js   # no site chrome
   components/
     icons/     # one SVG React component per icon (Material Symbols + brand marks), currentColor
     ui/        # primitives: Logo, AppButton, Container, Heading, Chip, Badge, Avatar, AvatarGroup,
