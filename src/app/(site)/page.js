@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/utils/seo";
 import { getAllCourses, getCategories, getCourseBySlug } from "@/lib/api/courses";
 import { getLandingContent } from "@/lib/api/landing";
 import { getLearnersByIds } from "@/lib/api/learners";
@@ -11,6 +12,8 @@ import LearningPaths from "@/sections/landing/LearningPaths";
 import PartnerLogos from "@/sections/landing/PartnerLogos";
 import ShowcaseBackdrop from "@/sections/landing/ShowcaseBackdrop";
 import Testimonials from "@/sections/landing/Testimonials";
+
+export const metadata = buildMetadata({ path: "/" });
 
 export default async function HomePage() {
   const content = await getLandingContent();

@@ -1,3 +1,5 @@
+import { ROUTES } from "@/lib/constants/routes";
+import { buildMetadata } from "@/lib/utils/seo";
 import { notFound } from "next/navigation";
 import { getCreatorProfileContent } from "@/lib/api/creatorProfile";
 import { getCategories, getCourseLevels, getCoursesByCreator } from "@/lib/api/courses";
@@ -16,7 +18,13 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const creator = await getCreatorBySlug(slug);
   if (!creator) return {};
-  return { title: creator.name, description: creator.headline };
+  return buildMetadata({
+    title: creator.name,
+    description: `${creator.headline}. ${creator.bio[0]}`.slice(0, 160),
+    path: ROUTES.creator(creator.slug),
+    image: creator.avatar,
+    type: "profile",
+  });
 }
 
 export default async function CreatorPage({ params }) {

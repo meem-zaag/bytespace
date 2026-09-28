@@ -1,3 +1,5 @@
+import { ROUTES } from "@/lib/constants/routes";
+import { buildMetadata } from "@/lib/utils/seo";
 import { getAuthContent } from "@/lib/api/auth";
 import { getCourseBySlug } from "@/lib/api/courses";
 import { getLandingContent } from "@/lib/api/landing";
@@ -6,10 +8,11 @@ import AuthShell from "@/sections/auth/AuthShell";
 import AuthShowcase from "@/sections/auth/AuthShowcase";
 import SignUpForm from "@/sections/auth/SignUpForm";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Create an account",
   description: "Sign up for ByteSpace in seconds and start learning from creators you love.",
-};
+  path: ROUTES.signUp,
+});
 
 export default async function SignUpPage() {
   const [auth, landing] = await Promise.all([getAuthContent(), getLandingContent()]);

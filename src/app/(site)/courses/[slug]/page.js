@@ -1,3 +1,5 @@
+import { ROUTES } from "@/lib/constants/routes";
+import { buildMetadata } from "@/lib/utils/seo";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { getCourseDetailsContent } from "@/lib/api/courseDetails";
@@ -23,7 +25,13 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const course = await getCourseBySlug(slug);
   if (!course) return {};
-  return { title: course.fullTitle, description: course.subtitle };
+  return buildMetadata({
+    title: course.fullTitle,
+    description: `${course.subtitle}. ${course.description[0]}`.slice(0, 160),
+    path: ROUTES.course(course.slug),
+    image: course.thumbnail,
+    type: "article",
+  });
 }
 
 export default async function CourseDetailsPage({ params }) {
