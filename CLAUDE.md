@@ -136,7 +136,9 @@ public/
   helpers/hooks/stores/constants.
 - Server Components by default. `"use client"` only for animation, Lenis, Zustand, antd forms,
   interactivity (tabs, menus, filters).
-- `next/font` (Poppins via Google; Satoshi + Clash Display self-hosted with `next/font/local`),
+- `next/font` (Poppins via Google; Satoshi via `next/font/local`). Satoshi files are NOT committed
+  (Fontshare FFL forbids public redistribution): `scripts/fetch-fonts.mjs` downloads them into the
+  git-ignored `src/fonts/` before `dev`/`build`. Clash Display is only in the logo, shipped as SVG.
   `next/image` for raster images (always width/height or `fill` + sizes), `next/link`, semantic HTML,
   per-page metadata (title, description, Open Graph), accessible markup (alt, aria, focus-visible,
   keyboard nav).
@@ -186,8 +188,8 @@ Repo is PUBLIC: never commit secrets, tokens, `.env*` files or Figma tokens.
    - compare against Figma at desktop, tablet, mobile widths; fix differences
    - Conventional Commit, e.g. `feat(header): add responsive header with mobile menu`
    - push, open a PR with `gh pr create` (title, description, what was built, checklist)
-   - **STOP and wait for the user's approval.** After approval: squash-merge, delete branch
-     (local + remote), `git checkout main && git pull`.
+   - **STOP and wait for the user's approval.** After approval: `gh pr merge <n> --squash`
+     (do NOT delete branches), then `git checkout main && git pull`.
 3. Never bundle multiple components/sections in one branch.
 
 ## Quality bar
