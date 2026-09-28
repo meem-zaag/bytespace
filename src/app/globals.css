@@ -197,3 +197,18 @@
     drop-shadow(37.12px 53.03px 56px rgb(0 0 0 / 0.11))
     drop-shadow(51.04px 72.91px 72px rgb(0 0 0 / 0.13));
 }
+
+/* 404 numerals: lime fading into the blue backdrop (sampled from the Figma frame). */
+@utility text-fade-lime {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-lime-500) 0%,
+    var(--color-lime-500) 25%,
+    color-mix(in srgb, var(--color-lime-500) 82%, transparent) 50%,
+    color-mix(in srgb, var(--color-lime-500) 55%, transparent) 67%,
+    color-mix(in srgb, var(--color-lime-500) 28%, transparent) 80%,
+    transparent 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
