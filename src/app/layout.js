@@ -1,4 +1,5 @@
 import { poppins, satoshi } from "@/lib/fonts";
+import Providers from "@/providers/Providers";
 import "./globals.css";
 
 export const metadata = {
@@ -10,7 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} ${satoshi.variable}`}>
-      <body className="flex min-h-dvh flex-col">{children}</body>
+      <body className="flex min-h-dvh flex-col">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
