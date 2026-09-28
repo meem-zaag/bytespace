@@ -1,6 +1,10 @@
 import { notFound } from "next/navigation";
-import { getCourseBySlug, getCourseSlugs } from "@/lib/api/courses";
+import { getCourseDetailsContent } from "@/lib/api/courseDetails";
+import { getCourseBySlug, getCourseIncludes, getCourseSlugs } from "@/lib/api/courses";
+import { getLessonsByCourse } from "@/lib/api/lessons";
+import Container from "@/components/ui/Container";
 import CourseHero from "@/sections/course-details/CourseHero";
+import CourseSidebar from "@/sections/course-details/CourseSidebar";
 
 export const dynamicParams = false;
 
@@ -21,9 +25,25 @@ export default async function CourseDetailsPage({ params }) {
   const course = await getCourseBySlug(slug);
   if (!course) notFound();
 
+  const [content, modules, includes] = await Promise.all([
+    getCourseDetailsContent(),
+    getLessonsByCourse(course.id),
+    getCourseIncludes(),
+  ]);
+
   return (
     <main id="main" className="flex-1">
       <CourseHero course={course} />
+      <Container className="grid gap-10 pt-10 pb-20 xl:grid-cols-[723px_412px] xl:justify-between xl:pt-[63px] xl:pb-[72px]">
+        <div />
+        <CourseSidebar
+          course={course}
+          modules={modules}
+          includes={includes}
+          content={content.sidebar}
+          className="relative z-10 xl:-mt-[604px] xl:self-start"
+        />
+      </Container>
     </main>
   );
 }
