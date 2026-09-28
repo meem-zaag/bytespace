@@ -122,7 +122,7 @@ const REVIEWS = [
     "learner-albert-flores",
     5,
     "2025-06-15",
-    "Sofia's process is so relaxed and clear. My illustrations improved within a week.",
+    "Sarah's process is so relaxed and clear. My illustrations improved within a week.",
   ],
   [
     "course-design-systems-in-practice",

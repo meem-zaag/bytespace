@@ -39,12 +39,12 @@ export const creators = [
     role: "Professional Creator",
     headline: "Illustrator and design systems lead",
     bio: [
-      "Lumen Creative is the teaching home of Sofia Marquez, an illustrator and design systems lead with a decade of studio experience.",
+      "Lumen Creative is the teaching home of Sarah Marquez, an illustrator and design systems lead with a decade of studio experience.",
       "Expect warm, hands-on lessons that blend craft, process and the confidence to find your own visual voice.",
     ],
     avatar: {
-      src: "/images/people/sofia-marquez.jpg",
-      alt: "Portrait of Sofia Marquez from Lumen Creative",
+      src: "/images/people/sarah-marquez.jpg",
+      alt: "Portrait of Sarah Marquez from Lumen Creative",
     },
     followers: 512,
   },
@@ -59,8 +59,8 @@ export const creators = [
       "Our courses focus on practical techniques you can apply at work the very next day.",
     ],
     avatar: {
-      src: "/images/people/marcus-bell.jpg",
-      alt: "Portrait of Marcus Bell from Northwind Analytics",
+      src: "/images/people/alex-bennett.jpg",
+      alt: "Portrait of Alex Bennett from Northwind Analytics",
     },
     followers: 227,
   },
@@ -87,12 +87,12 @@ export const creators = [
     role: "Professional Creator",
     headline: "Financial planner for independent workers",
     bio: [
-      "Atlas Finance Lab is run by Daniel Hughes, a certified financial planner who specialises in the money questions freelancers actually face.",
+      "Atlas Finance Lab is run by James Lawson, a certified financial planner who specialises in the money questions freelancers actually face.",
       "No jargon, just calm, practical steps toward financial confidence.",
     ],
     avatar: {
-      src: "/images/people/daniel-hughes.jpg",
-      alt: "Portrait of Daniel Hughes from Atlas Finance Lab",
+      src: "/images/people/james-lawson.jpg",
+      alt: "Portrait of James Lawson from Atlas Finance Lab",
     },
     followers: 189,
   },
