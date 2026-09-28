@@ -35,11 +35,3 @@ export function staggerContainer(stagger = 0.08, delay = 0) {
     visible: { transition: { staggerChildren: stagger, delayChildren: delay } },
   };
 }
-
-/** Gentle infinite bob used by decorative floating elements. */
-export function floatLoop({ distance = 10, duration = 5, delay = 0 } = {}) {
-  return {
-    y: [0, -distance, 0],
-    transition: { duration, delay, ease: "easeInOut", repeat: Infinity },
-  };
-}

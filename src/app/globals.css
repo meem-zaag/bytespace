@@ -142,11 +142,17 @@
   /* Interaction-only elevation for cards (not a Figma style). */
   --shadow-card: 0 24px 48px -24px rgb(0 0 0 / 0.18);
 
-  --shadow-float:
-    0.52px 0.74px 3.04px rgb(0 0 0 / 0.04), 2.23px 3.19px 5.72px rgb(0 0 0 / 0.06),
-    5.38px 7.69px 9.57px rgb(0 0 0 / 0.07), 10.21px 14.58px 16.09px rgb(0 0 0 / 0.08),
-    16.95px 24.21px 24px rgb(0 0 0 / 0.09), 25.84px 36.91px 36px rgb(0 0 0 / 0.1),
-    37.12px 53.03px 56px rgb(0 0 0 / 0.11), 51.04px 72.91px 72px rgb(0 0 0 / 0.13);
+  --animate-float: float var(--float-duration, 6s) ease-in-out var(--float-delay, 0s) infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(calc(var(--float-distance, 12px) * -1));
+    }
+  }
 }
 
 @layer base {
@@ -184,18 +190,6 @@
     linear-gradient(to bottom, rgb(255 255 255 / 0.12) 2px, transparent 2px);
   background-size: 120px 120px;
   background-position: calc(50% + 60px) -2px;
-}
-
-/* Figma effect "A" (8 soft drop shadows) for transparent cut-out photos: follows the silhouette. */
-@utility drop-shadow-float {
-  filter: drop-shadow(0.52px 0.74px 3.04px rgb(0 0 0 / 0.04))
-    drop-shadow(2.23px 3.19px 5.72px rgb(0 0 0 / 0.06))
-    drop-shadow(5.38px 7.69px 9.57px rgb(0 0 0 / 0.07))
-    drop-shadow(10.21px 14.58px 16.09px rgb(0 0 0 / 0.08))
-    drop-shadow(16.95px 24.21px 24px rgb(0 0 0 / 0.09))
-    drop-shadow(25.84px 36.91px 36px rgb(0 0 0 / 0.1))
-    drop-shadow(37.12px 53.03px 56px rgb(0 0 0 / 0.11))
-    drop-shadow(51.04px 72.91px 72px rgb(0 0 0 / 0.13));
 }
 
 /* 404 numerals: lime fading into the blue backdrop (sampled from the Figma frame). */

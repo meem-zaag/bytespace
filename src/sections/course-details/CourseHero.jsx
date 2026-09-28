@@ -4,7 +4,6 @@ import ShareButton from "@/components/common/ShareButton";
 import PeopleIcon from "@/components/icons/PeopleIcon";
 import SignalIcon from "@/components/icons/SignalIcon";
 import StarIcon from "@/components/icons/StarIcon";
-import FadeIn from "@/components/motion/FadeIn";
 import Container from "@/components/ui/Container";
 import GridBackdrop from "@/components/ui/GridBackdrop";
 import Heading from "@/components/ui/Heading";
@@ -27,7 +26,7 @@ export default function CourseHero({ course }) {
     >
       <Container>
         <div className="flex flex-col gap-6 lg:max-w-[723px] xl:max-w-none xl:flex-row xl:items-start xl:justify-between">
-          <FadeIn immediate className="flex flex-col gap-6 xl:max-w-[820px]">
+          <div className="flex flex-col gap-6 xl:max-w-[820px]">
             <div className="flex flex-col gap-2">
               <Heading as="h1" id="course-title" size="s" className="text-neutral-50">
                 {course.fullTitle}
@@ -58,12 +57,12 @@ export default function CourseHero({ course }) {
                 </Pill>
               </li>
             </ul>
-          </FadeIn>
+          </div>
           <ShareButton title={course.fullTitle} className="self-start" />
         </div>
-        <FadeIn immediate delay={0.15} className="mt-10 lg:mt-[59px] lg:max-w-[720px] xl:ml-[5px]">
+        <div className="mt-10 lg:mt-[59px] lg:max-w-[720px] xl:ml-[5px]">
           <CoursePreview image={course.preview} courseTitle={course.fullTitle} />
-        </FadeIn>
+        </div>
       </Container>
     </GridBackdrop>
   );

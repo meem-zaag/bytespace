@@ -2,7 +2,6 @@ import Image from "next/image";
 import HappyStudentsCard from "@/components/common/HappyStudentsCard";
 import ProgressStatCard from "@/components/common/ProgressStatCard";
 import TopicStatCard from "@/components/common/TopicStatCard";
-import FadeIn from "@/components/motion/FadeIn";
 import Float from "@/components/motion/Float";
 import AppButton from "@/components/ui/AppButton";
 import Container from "@/components/ui/Container";
@@ -58,13 +57,13 @@ export default function LandingHero({ content, happyStudents }) {
       </div>
 
       <Container className="relative z-10 flex flex-col items-center pt-32 text-center sm:pt-36 lg:pt-[169px]">
-        <FadeIn immediate className="flex max-w-[935px] flex-col items-center gap-8">
+        <div className="flex max-w-[935px] flex-col items-center gap-8">
           <Heading as="h1" id="hero-title" size="l" className="text-white">
             {title}
           </Heading>
           <p className="max-w-[819px] text-body-l text-neutral-100">{subtitle}</p>
-        </FadeIn>
-        <FadeIn immediate delay={0.15} className="mt-10 w-full max-w-[581px] lg:mt-[60px]">
+        </div>
+        <div className="mt-10 w-full max-w-[581px] lg:mt-[60px]">
           <form
             action={ROUTES.courses}
             role="search"
@@ -78,7 +77,7 @@ export default function LandingHero({ content, happyStudents }) {
             />
             <AppButton type="submit">{search.submitLabel}</AppButton>
           </form>
-        </FadeIn>
+        </div>
       </Container>
 
       <div className="relative mt-10 h-[calc(512px*var(--stage-scale))] [--stage-scale:0.62] sm:[--stage-scale:0.8] lg:mt-0 lg:h-128 lg:[--stage-scale:1]">
@@ -87,17 +86,17 @@ export default function LandingHero({ content, happyStudents }) {
             aria-hidden="true"
             className="absolute top-[70px] left-[145px] size-[1149px] rounded-full border-[320px] border-lime-500"
           />
-          <FadeIn immediate delay={0.25} y={40} className="absolute top-0 left-[431px] w-[578px]">
+          <div className="absolute top-0 left-[431px] w-[578px]">
             <Image
               src={image.src}
               alt={image.alt}
-              width={578}
-              height={541}
+              width={729}
+              height={715}
               priority
-              sizes="(min-width: 1024px) 578px, 60vw"
-              className="drop-shadow-float"
+              sizes="(min-width: 1024px) 729px, 75vw"
+              className="-mt-[23.5px] -ml-[23.5px] w-[729px] max-w-none"
             />
-          </FadeIn>
+          </div>
           <Float delay={0.4} className="absolute top-[127px] left-[404px] max-sm:hidden">
             <TopicStatCard title={topicCard.title} stats={topicCard.stats} />
           </Float>

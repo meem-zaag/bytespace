@@ -1,6 +1,5 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import ScopedSearch from "@/components/common/ScopedSearch";
 import Container from "@/components/ui/Container";
@@ -9,15 +8,14 @@ import Heading from "@/components/ui/Heading";
 import { useCourseFiltersStore } from "@/store/useCourseFiltersStore";
 
 /**
- * Courses page hero: title and scoped search. Reads `?q=` once (links from the landing search,
- * footer and learning paths) and keeps it in the catalog filter store and the URL.
+ * Courses page hero: title and scoped search. `initialQuery` comes from `?q=` (links from the
+ * landing search, footer and learning paths) and is kept in the catalog filter store and the URL.
  *
  * @param {object} props
  * @param {typeof import("@/lib/data/catalog").catalog.hero} props.content
+ * @param {string} [props.initialQuery=""]
  */
-export default function CoursesHero({ content }) {
-  const searchParams = useSearchParams();
-  const initialQuery = searchParams.get("q") ?? "";
+export default function CoursesHero({ content, initialQuery = "" }) {
   const setFilters = useCourseFiltersStore((state) => state.setFilters);
   const resetCount = useCourseFiltersStore((state) => state.resetCount);
 

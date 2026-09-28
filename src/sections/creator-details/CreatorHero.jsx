@@ -1,5 +1,4 @@
 import Image from "next/image";
-import FadeIn from "@/components/motion/FadeIn";
 import Container from "@/components/ui/Container";
 import GridBackdrop from "@/components/ui/GridBackdrop";
 import Heading from "@/components/ui/Heading";
@@ -21,7 +20,7 @@ export default function CreatorHero({ creator, content }) {
       className="pt-28 pb-14 lg:min-h-148 lg:pt-[172px] lg:pb-20"
     >
       <Container>
-        <FadeIn immediate className="flex flex-col gap-10 lg:pl-0.5">
+        <div className="flex flex-col gap-10 lg:pl-0.5">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
             <Image
               src={creator.avatar.src}
@@ -53,7 +52,7 @@ export default function CreatorHero({ creator, content }) {
             followers={creator.followers}
             content={content}
           />
-        </FadeIn>
+        </div>
       </Container>
     </GridBackdrop>
   );

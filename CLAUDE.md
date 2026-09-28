@@ -55,7 +55,7 @@ Typography (all headings letter-spacing −1% = `-0.01em`; body/labels 0):
 
 Layout grid: 12 columns, 120px margin, 40px gutter, 1200px content at 1440. Header height 120px.
 Radii: 24 cards/buttons/chips, 12 card media, full for search/email inputs.
-Shadow “A”: 8-layer soft drop shadow (floating stat cards). Borders: 1px `neutral-200`.
+Shadow “A”: 8-layer soft drop shadow, baked into the landing photos (see below). Borders: 1px `neutral-200`.
 
 ## Decorative 3D shapes
 
@@ -64,6 +64,12 @@ Figma source renders (image fills) exactly like Figma composites them: the grey 
 `#D4FB20` / `#F5F5F6` layer in HARD_LIGHT blend, masked by the render's alpha. Place them with
 `components/ui/DecorShape` at the Figma coordinates (size via `--decor-size`, so responsive
 `size-*` classes can override it without `!important`).
+
+## Photo shadows
+
+The cut-out landing photos carry Figma's 8-layer "A" drop shadow **baked into the WebP**
+(`public/images/landing/*-student.webp`, padded 24px left/top). A live CSS `drop-shadow()` chain cost
+~2.5s of main-thread paint on the home page, so don't reintroduce it.
 
 ## Design corrections (approved by the user — apply instead of copying the frame)
 
