@@ -33,6 +33,13 @@ export const landing = {
       ],
     },
   },
+  partners: [
+    { id: "partner-1", name: "Logoipsum", mark: "waves" },
+    { id: "partner-2", name: "Logoipsum", mark: "burst" },
+    { id: "partner-3", name: "Logoipsum", mark: "bolt" },
+    { id: "partner-4", name: "Logoipsum", mark: "petals" },
+    { id: "partner-5", name: "Logoipsum", mark: "rings" },
+  ],
   creatorCta: {
     title: "Unlock Your Potential as a Creator with ByteSpace",
     description:
