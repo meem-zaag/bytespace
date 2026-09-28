@@ -49,3 +49,6 @@ figma-token*
 .idea/
 .vscode/
 *.log
+
+# licensed fonts: fetched at build time (Fontshare FFL forbids public redistribution)
+/src/fonts/
