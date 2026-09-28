@@ -1,6 +1,7 @@
 import { getAllCourses, getCategories, getCourseBySlug } from "@/lib/api/courses";
 import { getLandingContent } from "@/lib/api/landing";
 import { getLearnersByIds } from "@/lib/api/learners";
+import { getTestimonials } from "@/lib/api/testimonials";
 import CtaBanner from "@/sections/common/CtaBanner";
 import CreateManageSection from "@/sections/landing/CreateManageSection";
 import FeaturedCourses from "@/sections/landing/FeaturedCourses";
@@ -9,14 +10,16 @@ import LandingHero from "@/sections/landing/LandingHero";
 import LearningPaths from "@/sections/landing/LearningPaths";
 import PartnerLogos from "@/sections/landing/PartnerLogos";
 import ShowcaseBackdrop from "@/sections/landing/ShowcaseBackdrop";
+import Testimonials from "@/sections/landing/Testimonials";
 
 export default async function HomePage() {
   const content = await getLandingContent();
-  const [happyStudents, courses, categories, showcaseCourse] = await Promise.all([
+  const [happyStudents, courses, categories, showcaseCourse, testimonials] = await Promise.all([
     getLearnersByIds(content.hero.happyStudents.learnerIds),
     getAllCourses(),
     getCategories(),
     getCourseBySlug(content.growth.showcaseCourseSlug),
+    getTestimonials(),
   ]);
 
   return (
@@ -38,6 +41,7 @@ export default async function HomePage() {
         />
       </ShowcaseBackdrop>
       <CtaBanner {...content.creatorCta} />
+      <Testimonials content={content.testimonials} testimonials={testimonials} />
     </main>
   );
 }

@@ -100,6 +100,11 @@ export const landing = {
     revenue: { title: "Total Revenue", period: "July 1-28", amount: "$120.29", progress: 56 },
     yearToDate: { title: "Year to Date", period: "2023", amount: "$1,200.38", change: "+12%" },
   },
+  testimonials: {
+    title: "Discover What Our Community Is Saying",
+    description:
+      "At ByteSpace, our vibrant community of learners and creators is at the heart of what we do. Hear directly from those who have experienced the transformative journey of learning and creating on our platform. Explore testimonials that reflect the diverse perspectives of enthusiastic learners and accomplished creators.",
+  },
   creatorCta: {
     title: "Unlock Your Potential as a Creator with ByteSpace",
     description:
