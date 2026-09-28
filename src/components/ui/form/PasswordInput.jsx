@@ -31,6 +31,7 @@ export default function PasswordInput({
       label={<span className="text-label-s text-neutral-950">{label}</span>}
       labelCol={LABEL_COL}
       rules={rules}
+      validateFirst
       className={className}
     >
       <Input.Password
