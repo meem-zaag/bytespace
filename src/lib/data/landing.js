@@ -2,6 +2,37 @@ import { ROUTES } from "@/lib/constants/routes";
 
 /** Landing page content. Each key feeds one section. */
 export const landing = {
+  hero: {
+    title: "Get Access to Hundreds Courses Available",
+    subtitle:
+      "Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.",
+    search: {
+      label: "Search courses, topics or creators",
+      placeholder: "Course, topic, creator",
+      submitLabel: "Search",
+    },
+    image: {
+      src: "/images/landing/hero-student.webp",
+      alt: "Smiling student with headphones holding a laptop",
+    },
+    topicCard: { title: "UI/UX Design", stats: ["200 Courses", "1000+ Students"] },
+    progressCard: { label: "Learning Progress", value: 55 },
+    happyStudents: {
+      title: "Happy Students",
+      rating: 4.5,
+      ratingCount: 240,
+      countLabel: "2K+",
+      learnerIds: [
+        "learner-brooklyn-simmons",
+        "learner-omar-haddad",
+        "learner-albert-flores",
+        "learner-cody-fisher",
+        "learner-darnell-brooks",
+        "learner-malik-johnson",
+        "learner-lars-nilsson",
+      ],
+    },
+  },
   creatorCta: {
     title: "Unlock Your Potential as a Creator with ByteSpace",
     description:
