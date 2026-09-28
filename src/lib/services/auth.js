@@ -24,3 +24,13 @@ export async function signIn() {
   await wait(900);
   return { ok: true, message: "Welcome back! You're signed in." };
 }
+
+/**
+ * @param {"facebook" | "google"} provider
+ * @returns {Promise<{ ok: true, message: string }>}
+ */
+export async function signInWithProvider(provider) {
+  await wait(900);
+  const name = provider === "google" ? "Google" : "Facebook";
+  return { ok: true, message: `Signed in with ${name}. Welcome back!` };
+}

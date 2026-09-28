@@ -20,6 +20,28 @@ export const auth = {
     switchLink: { label: "Login", href: ROUTES.signIn },
     successRedirect: ROUTES.courses,
   },
+  signIn: {
+    intro: {
+      title: "Sign in with ease",
+      description:
+        "Experience a seamless and efficient sign-in process that grants you instant access to a world of knowledge.",
+    },
+    eyebrow: "Sign In",
+    title: "Welcome Back",
+    fields: {
+      email: { label: "Email", placeholder: "designer@example.com" },
+      password: { label: "Password", placeholder: "********" },
+    },
+    submitLabel: "Sign In",
+    dividerLabel: "or",
+    providers: [
+      { id: "facebook", label: "Continue with Facebook" },
+      { id: "google", label: "Continue with Google" },
+    ],
+    switchPrompt: "New user?",
+    switchLink: { label: "Create an account", href: ROUTES.signUp },
+    successRedirect: ROUTES.courses,
+  },
   showcase: {
     backCourseSlug: "build-digital-asset",
     frontCourseSlug: "the-power-of-big-data",
