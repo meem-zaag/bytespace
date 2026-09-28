@@ -15,7 +15,7 @@ export default function PartnerLogos({ partners }) {
       <Container className="py-14 lg:flex lg:h-[202px] lg:items-start lg:pt-20 lg:pb-0">
         <Stagger
           as="ul"
-          className="flex w-full flex-wrap items-center justify-center gap-x-12 gap-y-8 lg:flex-nowrap lg:justify-between lg:px-[34px]"
+          className="flex w-full flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12 sm:gap-y-8 xl:flex-nowrap xl:justify-between xl:gap-x-0 xl:px-[34px]"
         >
           {partners.map((partner) => (
             <StaggerItem as="li" key={partner.id} y={12}>

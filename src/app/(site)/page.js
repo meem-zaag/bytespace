@@ -1,17 +1,20 @@
-import { getAllCourses, getCategories } from "@/lib/api/courses";
+import { getAllCourses, getCategories, getCourseBySlug } from "@/lib/api/courses";
 import { getLandingContent } from "@/lib/api/landing";
 import { getLearnersByIds } from "@/lib/api/learners";
 import FeaturedCourses from "@/sections/landing/FeaturedCourses";
+import GrowthSection from "@/sections/landing/GrowthSection";
 import LandingHero from "@/sections/landing/LandingHero";
 import LearningPaths from "@/sections/landing/LearningPaths";
 import PartnerLogos from "@/sections/landing/PartnerLogos";
+import ShowcaseBackdrop from "@/sections/landing/ShowcaseBackdrop";
 
 export default async function HomePage() {
   const content = await getLandingContent();
-  const [happyStudents, courses, categories] = await Promise.all([
+  const [happyStudents, courses, categories, showcaseCourse] = await Promise.all([
     getLearnersByIds(content.hero.happyStudents.learnerIds),
     getAllCourses(),
     getCategories(),
+    getCourseBySlug(content.growth.showcaseCourseSlug),
   ]);
 
   return (
@@ -24,6 +27,9 @@ export default async function HomePage() {
         categories={categories}
       />
       <LearningPaths content={content.learningPaths} />
+      <ShowcaseBackdrop>
+        <GrowthSection content={content.growth} course={showcaseCourse} />
+      </ShowcaseBackdrop>
     </main>
   );
 }

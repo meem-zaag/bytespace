@@ -66,7 +66,10 @@ export default function PartnerLogo({ mark, name, className }) {
     <span
       role="img"
       aria-label={name}
-      className={cn("inline-flex h-[41px] items-center gap-2 text-neutral-400", className)}
+      className={cn(
+        "inline-flex h-[41px] items-center gap-1.5 text-neutral-400 sm:gap-2",
+        className,
+      )}
     >
       <svg
         width="40"
@@ -75,13 +78,13 @@ export default function PartnerLogo({ mark, name, className }) {
         fill="currentColor"
         aria-hidden="true"
         focusable="false"
-        className="shrink-0"
+        className="size-8 shrink-0 sm:size-10"
       >
         {MARKS[mark]}
       </svg>
       <span
         aria-hidden="true"
-        className="text-[1.5625rem] leading-none font-bold tracking-[-0.04em]"
+        className="text-xl leading-none font-bold tracking-[-0.04em] sm:text-[1.5625rem]"
       >
         {name}
       </span>
