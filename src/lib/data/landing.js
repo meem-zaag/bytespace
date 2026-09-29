@@ -46,6 +46,7 @@ export const landing = {
       "At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life.",
     featuredLabel: "Featured",
     moreLink: { label: "+ More", href: ROUTES.courses },
+    chipRows: [8, 6],
     limit: 6,
     empty: {
       title: "No courses in this category yet",
