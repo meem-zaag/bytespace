@@ -4,6 +4,10 @@ import { Dropdown } from "antd";
 import AppButton from "@/components/ui/AppButton";
 import { cn } from "@/lib/utils/cn";
 
+/** Long lists (e.g. categories) scroll inside a 400px menu instead of growing with the viewport. */
+const MENU_CLASS =
+  "max-h-[400px] overscroll-contain [scrollbar-color:var(--color-neutral-300)_transparent] [scrollbar-width:thin]";
+
 /**
  * Outline pill button that opens an antd single-select menu (toolbar filters and sorting).
  * Shows `label` until a non-default option is picked, then the option's label, highlighted.
@@ -37,6 +41,7 @@ export default function DropdownSelect({
       trigger={["click"]}
       placement={placement}
       menu={{
+        className: MENU_CLASS,
         items: options.map((option) => ({ key: option.value, label: option.label })),
         selectable: true,
         selectedKeys: [value],

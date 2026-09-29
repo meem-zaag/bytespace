@@ -72,6 +72,13 @@ const theme = {
       optionFontSize: 16,
       selectorBg: palette.white,
     },
+    Dropdown: {
+      // Concentric corners: option radius = menu radius − menu padding, so the hovered and
+      // selected option follows the menu's curve instead of nearly touching it.
+      borderRadiusLG: 24,
+      borderRadiusSM: 16,
+      paddingXXS: 8,
+    },
     Button: {
       fontWeight: 500,
       contentFontSize: 18,
