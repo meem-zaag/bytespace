@@ -14,6 +14,28 @@ const LAYOUTS = {
   responsive: `${SCROLL} md:mx-0 md:flex-wrap md:justify-center md:gap-y-[21px] md:overflow-visible md:px-0 md:pb-0`,
 };
 
+/** With `desktopRows`: stack the rows from `xl`; below it each row is `contents`, so chips flow as before. */
+const ROWS_GROUP = "xl:flex-col xl:items-center";
+const ROW = "contents xl:flex xl:flex-wrap xl:justify-center xl:gap-x-4 xl:gap-y-[21px]";
+
+/**
+ * Splits `items` into rows of the given sizes; whatever is left forms the last row.
+ *
+ * @param {import("react").ReactNode[]} items
+ * @param {number[]} sizes
+ * @returns {import("react").ReactNode[][]}
+ */
+function splitIntoRows(items, sizes) {
+  const rows = [];
+  let start = 0;
+  for (const size of sizes) {
+    rows.push(items.slice(start, start + size));
+    start += size;
+  }
+  rows.push(items.slice(start));
+  return rows.filter((row) => row.length > 0);
+}
+
 /**
  * Single-select chip filter (Figma "Tab_Categories"). `wrap` centers the chips over several rows,
  * `scroll` keeps one row that scrolls sideways (courses page), `responsive` scrolls on phones and
@@ -25,6 +47,9 @@ const LAYOUTS = {
  * @param {(value: string) => void} props.onChange
  * @param {"wrap" | "scroll" | "responsive"} [props.layout="wrap"]
  * @param {{ href: string, label: string }} [props.moreLink] trailing "+ More" link
+ * @param {number[]} [props.desktopRows] chips per row from `xl` (1280px), e.g. `[8, 6]`: eight in
+ *   the first row, six in the second, the rest (and the "+ More" link) in the last. Narrower
+ *   screens keep the natural wrap.
  * @param {string} [props.label="Filter by category"] accessible group name
  * @param {string} [props.className]
  */
@@ -34,29 +59,46 @@ export default function CategoryChips({
   onChange,
   layout = "wrap",
   moreLink,
+  desktopRows,
   label = "Filter by category",
   className,
 }) {
+  const items = options.map((option) => (
+    <Chip
+      key={option.value}
+      active={option.value === value}
+      onClick={() => onChange(option.value)}
+      className="snap-start"
+    >
+      {option.label}
+    </Chip>
+  ));
+
+  if (moreLink) {
+    items.push(
+      <Link
+        key="more"
+        href={moreLink.href}
+        className="inline-flex shrink-0 items-center rounded-3xl px-4 py-3 text-label-m text-primary-800 transition-colors hover:bg-primary-50"
+      >
+        {moreLink.label}
+      </Link>,
+    );
+  }
+
   return (
-    <div role="group" aria-label={label} className={cn("flex", LAYOUTS[layout], className)}>
-      {options.map((option) => (
-        <Chip
-          key={option.value}
-          active={option.value === value}
-          onClick={() => onChange(option.value)}
-          className="snap-start"
-        >
-          {option.label}
-        </Chip>
-      ))}
-      {moreLink && (
-        <Link
-          href={moreLink.href}
-          className="inline-flex shrink-0 items-center rounded-3xl px-4 py-3 text-label-m text-primary-800 transition-colors hover:bg-primary-50"
-        >
-          {moreLink.label}
-        </Link>
-      )}
+    <div
+      role="group"
+      aria-label={label}
+      className={cn("flex", LAYOUTS[layout], desktopRows && ROWS_GROUP, className)}
+    >
+      {desktopRows
+        ? splitIntoRows(items, desktopRows).map((row, index) => (
+            <div key={index} className={ROW}>
+              {row}
+            </div>
+          ))
+        : items}
     </div>
   );
 }

@@ -37,6 +37,7 @@ export default function FeaturedCoursesBrowser({ courses, categories, content })
         onChange={setCategory}
         layout="responsive"
         moreLink={content.moreLink}
+        desktopRows={content.chipRows}
         className="mt-10 lg:mt-[42px]"
       />
       <div aria-live="polite" className="mt-12 lg:mt-[77px]">
